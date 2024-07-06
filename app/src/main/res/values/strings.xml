@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">App Market</string>
+
+    <string name="Item_Inicio">Inicio</string>
+    <string name="Item_Chats">Chats</string>
+    <string name="Item_Vender">Vender</string>
+    <string name="Item_Mis_Anuncios">Mis anuncios</string>
+    <string name="Item_Cuenta">Cuenta</string>
+
+    <string name="TituloRl">Título</string>
+
+    <string name="Ingresar_email">Ingresar con E-mail</string>
+    <string name="Ingresar_google">Ingresar con Google</string>
+
+    <string name="Txt_login">Login</string>
+    <string name="Et_email">Email</string>
+    <string name="Et_password">Password</string>
+    <string name="Btn_ingresar">Ingresar</string>
+    <string name="Txt_no_cuenta">¿No tienes una cuenta?</string>
+    <string name="Txt_registrarme">REGISTRARME</string>
+
+    <string name="Txt_registro">Registro de Usuario</string>
+    <string name="Et_r_password">Repetir contraseña</string>
+    <string name="Btn_registrar">Registrar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+</resources>
