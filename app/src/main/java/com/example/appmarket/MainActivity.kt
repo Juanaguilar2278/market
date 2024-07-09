@@ -1,5 +1,6 @@
 package com.example.appmarket
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +11,13 @@ import com.example.appmarket.Fragmentos.FragmentCuenta
 import com.example.appmarket.Fragmentos.FragmentInicio
 import com.example.appmarket.Fragmentos.FragmentMisAnuncios
 import com.example.appmarket.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    //private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
+
+
+        firebaseAuth =  FirebaseAuth.getInstance()
+        comprobarSesion()
         verFragmentInicio()
+
 
         binding.BottomNV.setOnItemSelectedListener { item ->
             when(item.itemId){
@@ -48,6 +57,13 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+    private fun comprobarSesion(){
+        if (firebaseAuth.currentUser == null){
+            startActivity(Intent(this, OpcionesLogin::class.java))
+            finishAffinity()
+        }
+    }
+
     private fun verFragmentInicio(){
         binding.TituloRl.text = "Inicio"
         val fragment = FragmentInicio ()

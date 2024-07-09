@@ -1,6 +1,7 @@
 package com.example.appmarket
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -11,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.appmarket.databinding.ActivityRegistroEmailBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthEmailException
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.core.Constants
 import java.util.regex.Pattern
 
 class Registro_email : AppCompatActivity() {
@@ -100,6 +103,39 @@ class Registro_email : AppCompatActivity() {
 
     private fun llenarInfoBD() {
 
+        progressDialog.setMessage("Guardando información")
 
+        val tiempo = Constantes.obtenerTiempoDis()
+        val emailUsuario = firebaseAuth.currentUser!!.email
+        val uidUsuario = firebaseAuth.uid
+
+        val hashMap = HashMap<String, Any>()
+        hashMap["nombre"] = ""
+        hashMap["codigoTelefono"] = ""
+        hashMap["telefono"] = ""
+        hashMap["urlImagenPerfil"] = ""
+        hashMap["proveedor"] = "Email"
+        hashMap["escribiendo"] = ""
+        hashMap["tiempo"] = tiempo
+        hashMap["email"] = "${emailUsuario}"
+        hashMap["uid"] = "${uidUsuario}"
+        hashMap["fecha_nac"] = ""
+
+        val ref =FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(uidUsuario!!)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                startActivity(Intent(this, MainActivity::class.java))
+                finishAffinity()
+            }
+            .addOnFailureListener { e->
+                progressDialog.dismiss()
+                Toast.makeText(
+                    this,
+                    "No se registrón debido a ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
     }
 }
