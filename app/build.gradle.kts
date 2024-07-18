@@ -56,6 +56,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.android.gms:play-services-auth:21.0.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.hbb20:ccp:2.7.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
