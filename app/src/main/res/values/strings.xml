@@ -27,16 +27,16 @@
     <!--Perfil de usuario-->
 
     <string name="Txt_perfil">Perfil de usuario</string>
-    <string name="Txt_informacion">Informacion:</string>
+    <string name="Txt_informacion">Información:</string>
     <string name="Txt_nombres">Nombres:</string>
-    <string name="Tv_nombres">Nombres completos</string>
+    <string name="Tv_nombres">Nombre completo</string>
     <string name="Txt_email">Email:</string>
     <string name="Tv_Email">email@dominio.com</string>
     <string name="Txt_nacimiento">Fecha de nacimiento:</string>
     <string name="Tv_nacimiento">dd/mm/aaaa</string>
     <string name="Txt_miembro">Miembro desde:</string>
     <string name="Tv_miembro">dd/mm/aaaa</string>
-    <string name="Txt_telefono">Telefono:</string>
+    <string name="Txt_telefono">Teléfono:</string>
     <string name="Tv_telefono">999999999</string>
     <string name="Txt_estadocuenta">Estado de cuenta:</string>
     <string name="Tv_estadocuenta">No verificado</string>
@@ -49,7 +49,7 @@
     <!--Editar perfil-->
     
     <string name="Txt_editar_perfil">Editar perfil</string>
-    <string name="Et_nombres">Nombres completo</string>
+    <string name="Et_nombres">Nombre completo</string>
     <string name="Et_f_nac">Fecha de nacimiento</string>
     <string name="Cod_tef"> +00 </string>
     <string name="Et_telefono">Teléfono</string>
